@@ -1,0 +1,138 @@
+<div class="container_12">
+    <div id="header" class="grid_12 alpha">
+        <ul class="menu">
+            <li class="menu"><a class="menu active" href="/">Home</a></li>
+            <li class="menu"><a class="menu" href="/crew">Crew</a></li>
+            <li class="menu"><a class="menu" href="/science">Science</a></li>
+            <li class="menu"><a class="menu" href="/spotTheStation">Spot The Station</a></li>
+        </ul>
+        <h1>International Space Station Fan Page</h1>
+    </div>
+
+    <img class="mySlides grid_12 alpha" src="images/iss_sts119_crop.jpg">
+    <img class="mySlides grid_12 alpha" src="images/iss_aurora .jpg">
+    <img class="mySlides grid_12 alpha" src="images/iss_soy.jpg">
+
+    <div class="grid_4 alpha">
+        <img class="thumb opacity hover-opacity-off" src="images/iss_sts119_crop.jpg" style="width:100%" onclick="currentDiv(1)">
+    </div>
+    <div class="grid_4">
+        <img class="thumb opacity hover-opacity-off" src="images/iss_aurora .jpg" style="width:100%" onclick="currentDiv(2)">
+    </div>
+    <div class="grid_4 omega">
+        <img class="thumb opacity hover-opacity-off" src="images/iss_soy.jpg" style="width:100%" onclick="currentDiv(3)">
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showSlide(slideIndex);
+
+        function currentDiv(n) {
+            showSlide(slideIndex = n);
+        }
+
+        carousel();
+
+        function carousel() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; 
+            }
+            //plusDivs(1)
+            showSlide(slideIndex += 1);
+            if (slideIndex > slides.length) {slideIndex = 1} 
+                slides[slideIndex-1].style.display = "block"; 
+            setTimeout(carousel, 8000); // Change image every 8 seconds
+        }
+
+        function showSlide(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var thumb = document.getElementsByClassName("thumb");
+            if (n > slides.length) 
+                slideIndex = 1
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < thumb.length; i++) {
+                thumb[i].className = thumb[i].className.replace(" opacity-off", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            thumb[slideIndex-1].className += " opacity-off";
+        }
+    </script>
+
+    <div class="grid_12 alpha content">
+        <h2>International Space Station facts</h2>
+        <p>
+            The ISS is the largest human constructed satellite at about the size of a football field.
+            It is in a near Earth orbit at 400 kilometers (250 miles) from sea level, traveling at an average speed of 7.67 km/sec (17,200 mph).
+        </p>
+        <img src="images/iss_size.jpg" style="width:100%"/>
+
+        <p><strong>Size and mass</strong></p>
+        <ul>
+            <li>Pressurized Module Length: 240 feet (73 meters)</li>
+            <li>Truss Length: 357.5 feet (109 meters)</li>
+            <li>Solar Array Length: 239.4 feet (73 meters)</li>
+            <li>Mass: 925,335 pounds (419,725 kilograms)</li>
+            <li>Habitable Volume: 13,696 cubic feet (388 cubic meters) not including visiting vehicles</li>
+            <li>Pressurized Volume: 32,333 cubic feet (916 cubic meters)</li>
+            <li>With BEAM expanded: 32,898 cubic feet (932 cubic meters)</li>
+            <li>Power Generation: 8 solar arrays provide 75 to 90 kilowatts of power</li>
+            <li>Lines of Computer Code: approximately 2.3 million</li>
+        </ul>
+
+        <img src="images/iss_config_exploded_view_page.jpg" style="width:100%"/>
+        
+        <p><strong>Other fun facts</strong></p>
+        <ul>
+            <li>230 individuals from 18 countries&nbsp;<a href="https://www.nasa.gov/feature/visitors-to-the-station-by-country">have visited</a>&nbsp;the International Space Station</li>
+            <li>The space station has been continuously occupied since November 2000</li>
+            <li>An&nbsp;<a href="http://www.nasa.gov/mission_pages/station/expeditions/index.html">international crew</a>&nbsp;of six people live and work while traveling at a speed of five miles per second, orbiting Earth about every 90 minutes.</li>
+            <li>In 24 hours, the space station makes 16 orbits of Earth, traveling through 16 sunrises and sunsets</li>
+            <li><a href="https://www.nasa.gov/press-release/three-international-space-station-crewmates-safely-return-to-earth">Peggy Whitson&nbsp;</a>set the record for spending the most total time living and working in space at 665 days on Sept. 2, 2017</li>
+            <li>The acre of solar panels that power the station means sometimes you can look up in the sky at dawn or dusk and see the spaceship flying over your home, even if you live in a big city. Find sighting opportunities at&nbsp;<a href="http://spotthestation.nasa.gov/">http://spotthestation.nasa.gov</a></li>
+            <li>The living and working space in the station is larger than a six-bedroom house (and has six sleeping quarters, two bathrooms, a gym, and a 360-degree view bay window).</li>
+            <li>To mitigate the loss of muscle and bone mass in the human body in microgravity, the astronauts work out at least two hours a day.</li>
+            <li>Astronauts and cosmonauts have conducted more than 205&nbsp;<a href="https://www.nasa.gov/mission_pages/station/spacewalks">spacewalks</a>&nbsp;(and counting!) for space station construction, maintenance and repair since December 1998</li>
+            <li>The solar array wingspan (240 feet) is about the same length as the world’s largest passenger aircraft, the Airbus A380.</li>
+            <li>The large modules and other pieces of the station were delivered on 42 assembly flights, 37 on the U.S. space shuttles and five on Russian Proton/Soyuz rockets.</li>
+            <li>The space station is 357 feet end-to-end, one yard shy of the full length of an American football field including the end zones.</li>
+            <li>Eight miles of wire connects the electrical power system aboard the space station.</li>
+            <li>The 55-foot robotic Canadarm2 has seven different joints and two end-effectors, or hands, and is used to move entire modules, deploy science experiments and even transport spacewalking astronauts.</li>
+            <li>Six&nbsp;<a href="https://www.nasa.gov/feature/visiting-vehicle-launches-arrivals-and-departures">spaceships</a>&nbsp;can be connected to the space station at once.</li>
+            <li>A spacecraft can arrive at the space station as soon as six hours after launching from Earth.</li>
+            <li>Four different&nbsp;<a href="https://www.nasa.gov/mission_pages/station/structure/launch/overview.html">cargo spacecraft</a>&nbsp;deliver science, cargo and supplies: Orbital ATK’s Cygnus, SpaceX’s Dragon, JAXA’s HTV, and the Russian Progress.</li>
+            <li>Through Expedition 52, the microgravity laboratory has hosted more than 2,400&nbsp;<a href="https://www.nasa.gov/mission_pages/station/research/index.html">research investigations</a>&nbsp;from researchers in more than 103 countries.</li>
+            <li>The station’s orbital path takes it over 90 percent of the Earth’s population, with astronauts taking millions of images of the planet below. Check them out at&nbsp;<a href="https://eol.jsc.nasa.gov/">https://eol.jsc.nasa.gov</a>&nbsp;&nbsp;</li>
+            <li>More than 20 different research payloads can be hosted outside the station at once, including Earth sensing equipment, materials science payloads, particle physics experiments like the&nbsp;<a href="https://www.nasa.gov/mission_pages/station/research/experiments/742.html">Alpha Magnetic Spectrometer-02</a>&nbsp;and more.</li>
+            <li>The space station travels an equivalent distance to the Moon and back in about a day.</li>
+            <li>The Water Recovery System reduces crew dependence on water delivered by a cargo spacecraft by 65 percent – from about 1 gallon a day to a third of a gallon.</li>
+            <li>On-orbit software monitors approximately 350,000 sensors, ensuring station and crew health and safety.&nbsp;</li>
+            <li>The space station has an internal pressurized volume equal that of a Boeing 747.</li>
+            <li>More than 50 computers control the systems on the space station.</li>
+            <li>More than 3 million lines of software code on the ground support more than 1.5 million lines of flight software code.</li>
+            <li>In the International Space Station’s U.S. segment alone, more than 1.5 million lines of flight software code run on 44 computers communicating via 100 data networks transferring 400,000 signals (e.g. pressure or temperature measurements, valve positions, etc.).</li>
+        </ul>
+
+        <p>
+            Images and facts credit: NASA <a href="https://www.nasa.gov">Nasa.gov</a>.
+        </p>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+{{!-- <p><i class="fa fa-car" style="font-size:60px;color:red;"></i>travel to the spacestation</p> --}}
+

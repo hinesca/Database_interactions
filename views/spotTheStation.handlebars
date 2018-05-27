@@ -1,0 +1,49 @@
+<div class="container_12">
+    <div id="header" class="grid_16 alpha">
+        <ul class="menu">
+            <li class="menu"><a class="menu" href="/">Home</a></li>
+            <li class="menu"><a class="menu" href="/crew">Crew</a></li>
+            <li class="menu"><a class="menu" href="/science">Science</a></li>
+            <li class="menu"><a class="menu active" href="/spotTheStation">Spot The Station</a></li>
+        </ul>        
+    </div>
+    <div class="grid_7 alpha content">
+        <h1 style="white-space: nowrap;">Spot the International Space Station</h1>
+        <p>
+            The ISS is the largest human constructed satellite, and is in a near Earth orbit at about 400 kilometers above sea level.
+            This makes it the third brightest object in the sky! It can be easily spotted from the ground if you know when and where to look.
+        </p>
+        <p>
+            Although the station can be very bright, it is traveling at an average speed of 7.67 km/sec (17,200 mph), and is only visible for a few minutes at a time.
+            The tool to the right, provided by NASA, shows the next opportunity to spot the station. If you are outside of Corvallis, visit 
+            <a href="https://spotthestation.nasa.gov/">NASA's spot the station website</a> for siting opportunities all around the world.
+        </p>
+       
+    </div>
+    <div class="grid_5 omega content" align="right">
+        <div class="spotTheStation">
+            <iframe src='https://spotthestation.nasa.gov/widget/widget.cfm?country=United_States&region=Oregon&city=Corvallis&theme=2' width='310' height='450' frameborder='0'></iframe>
+        </div>
+        <h3 id="weather">Weather: </h3>
+        <script>
+            weatherSubmit()
+
+            function weatherSubmit() {
+                var req = new XMLHttpRequest();
+                var reqStr = "http://api.openweathermap.org/data/2.5/weather?q=Corvallis&appid=fa7d80c48643dfadde2cced1b1be6ca1";
+                req.open("GET", reqStr, false);
+                req.send(null);
+                var responseObj = JSON.parse(req.responseText);
+                document.getElementById("weather").innerText += " " + responseObj.weather[0].description;
+            }
+        </script>
+    </div>
+
+    <p class="grid_12 alpha">
+        Video of ISS traversing the sky. Click the picture to download the accompanying mpeg movie file.
+        <a href="images/iss07feb08m_credner.mpg">
+            <img src="images/iss07feb08_credner_p.jpg" style="width:100%">
+        </a>
+        Image and video credit: <a href="https://apod.nasa.gov">NASA's Astronomy Picture of the Day</a>  and <a href="http://www.allthesky.com/"> AllTheSky.com </a>
+    </p>
+</div>
