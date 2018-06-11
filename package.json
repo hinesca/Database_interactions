@@ -1,0 +1,12 @@
+{
+  "name": "CS290_Database_interactions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "StartServer.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.11",
+    "mysql": "^2.15.0"
+  }
+}
