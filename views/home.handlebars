@@ -1,0 +1,108 @@
+<form id="WorkoutForm" action="../insert" method="get">
+    <fieldset>
+        <legend>Add Workout</legend>
+        <fieldset>
+            <label>Workout name:
+                <input type="text" name="name" id="name" value=" " size="30" maxlength="50">
+            </label>
+            <label>Reps:
+                <input type="int" name="reps" id="reps" value=0 size="5" maxlength="50">
+            </label>
+            <label>Weight:
+                <input type="int" name="weight" id="weight" value=0 size="5" maxlength="50">
+            </label>
+            <label>Date:
+                <input type="date" name="date" value="0001-01-01" id="date">
+            </label>
+            <label>Unit:
+                <input type="radio" name="lbs" id="lbs" value="1" checked> lbs
+                <input type="radio" name="lbs" id="lbs" value="0"> kg
+            </label>
+        </fieldset>
+        <button id="workoutSubmit">Submit</button> 
+    </fieldset>
+</form>
+
+<table id="dataTable">
+    <caption>Workout</caption>
+    <tr>
+        <th>Name</th>
+        <th>Weight</th>
+        <th>Reps</th>
+        <th>Date</th>
+        <th>Unit</th>
+    </tr>
+    {{#each results}}
+    <tr>
+        <td style="display:none;" class=tableId>{{this.id}}</td>
+        <td>{{this.name}}</td>
+        <td>{{this.reps}}</td>
+        <td>{{this.weight}}</td>
+        <td class="tableDate">{{this.date}}</td>
+        <td class="tableUnit">{{this.lbs}}</td>
+        <td>
+            <input type="button" value="Delete" onclick="deleteRow('dataTable',this)" />
+            <input type="button" value="Edit" onclick="editRow('dataTable',this)" />
+        </td>
+    </tr>
+    {{/each}}
+</table>
+
+
+<script>
+
+    var name = document.getElementById("name");
+    var weight = document.getElementById ("weight");
+    var date = document.getElementById("date");
+    var unit = document.getElementById("unit");
+    var body = document.getElementsByTagName("body")[0];
+
+    var lbsTdArr = document.getElementsByClassName("tableUnit");
+    for (i = 0; i < lbsTdArr.length; i++)
+    {
+        if (lbsTdArr[i].textContent == "1" || lbsTdArr[i].textContent == 1 ||lbsTdArr[i].textContent == "lbs")
+            lbsTdArr[i].textContent = "lbs";
+        else
+            lbsTdArr[i].textContent = "kg";
+    }
+
+    function deleteRow(tableID,currentRow) {
+        try {
+            var table = document.getElementById(tableID);
+            for (var i = 0; i < table.rows.length; i++) {
+                var row = table.rows[i];            
+                if (row==currentRow.parentNode.parentNode) {
+                    table.deleteRow(i);
+                    var req = new XMLHttpRequest();
+                    var id = row.getElementsByTagName("td")[0].textContent
+                    var reqStr = "/delete?id=" + id;
+                    req.open("GET", reqStr, false);
+                    req.send(null);
+                    break;
+                }
+            }
+        } catch (e) {
+            alert(e);
+        }
+    }
+
+    function editRow(tableID,currentRow) {
+        try {
+            var table = document.getElementById(tableID);
+            for (var i = 0; i < table.rows.length; i++) {
+                var row = table.rows[i];            
+                if (row==currentRow.parentNode.parentNode) {
+                    var req = new XMLHttpRequest();
+                    var id = row.getElementsByTagName("td")[0].textContent
+                    var reqStr = "/update?id=" + id;
+                    req.open("GET", reqStr, false);
+                    //req.send(null)
+                    break;
+                }
+            }
+        } catch (e) {
+            alert(e);
+        }
+    }
+</script>
+

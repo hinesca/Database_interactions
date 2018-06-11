@@ -1,0 +1,24 @@
+<form id="WorkoutForm" action="../insert" method="get">
+    <fieldset>
+        <legend>Add Workout</legend>
+        <fieldset>
+            <label>Workout name:
+                <input type="text" name="name" id="name" size="30" maxlength="50">
+            </label>
+            <label>Reps:
+                <input type="int" name="reps" id="reps" size="5" maxlength="50">
+            </label>
+            <label>Weight:
+                <input type="int" name="weight" id="weight" size="5" maxlength="50">
+            </label>
+            <label>Date:
+                <input type="date" name="date" id="date">
+            </label>
+            <label>Unit:
+                <input type="radio" name="unit" id="unit" value="1" checked> lbs
+                <input type="radio" name="unit" id="unit" value="0"> kg
+            </label>
+        </fieldset>
+        <button id="workoutSubmit">Submit</button> 
+    </fieldset>
+</form>

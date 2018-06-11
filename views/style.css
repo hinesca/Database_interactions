@@ -1,0 +1,26 @@
+/******************************************************************************
+* File: style.css
+* Description: CSS for CS290 Database interactions.
+* Author(s): Casey Hines, with inspiration from CS 390 course material and 
+* w3schools.com (https://www.w3schools.com/)
+******************************************************************************/
+
+body {
+    background-color: #DCDCDC;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*table {
+    table-layout: fixed;
+    width: 1200px;
+}*/
+
+table td.original {
+    font-style: italic;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
