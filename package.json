@@ -5,7 +5,7 @@
   "main": "StartServer.js",
   "dependencies": {
     "express": "^4.16.3",
-    "express-handlebars": "^3.0.0",
+    "express-handlebars": "^8.0.6",
     "handlebars": "^4.7.7",
     "mysql": "^2.15.0"
   }
